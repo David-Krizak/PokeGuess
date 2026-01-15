@@ -1,5 +1,13 @@
 [
   {
+    "player": "David",
+    "score": 9999
+  },
+  {
+    "player": "Testy",
+    "score": 13
+  },
+  {
     "player": "Ana",
     "score": 12
   },
@@ -32,15 +40,7 @@
     "score": 0
   },
   {
-    "player": "Anon",
-    "score": 0
-  },
-  {
-    "player": "Anon",
-    "score": 0
-  },
-  {
-    "player": "Anon",
+    "player": "snaky",
     "score": 0
   },
   {
