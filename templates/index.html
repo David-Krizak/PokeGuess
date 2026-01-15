@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogodi Pokémona</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="game-card fade-in">
+
+    <h2>Pogodi Pokémona</h2>
+    <img id="pokemon-img" class="pokemon-img silhouette">
+    <input id="guess" class="form-control mt-3" placeholder="Upiši ime Pokémona">
+    <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-primary" onclick="submitGuess()">Pogodi</button>
+        <button class="btn btn-warning" onclick="getHint()">Hint</button>
+        <button class="btn btn-danger" onclick="giveUp()">Odustani</button>
+    </div>
+    <p id="hint" class="mt-3"></p>
+    <div class="status-bar">
+        <span id="lives">❤️ 3</span>
+        <span id="score">⭐ 0</span>
+    </div>
+
+</div>
+
+<div class="modal fade" id="gameOverModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <h3>Game Over</h3>
+      <p id="final-score"></p>
+      <input id="player-name" class="form-control" placeholder="Tvoje ime">
+      <div class="d-grid gap-2 mt-3">
+        <button class="btn btn-success" onclick="saveScore()">Spremi score</button>
+        <button class="btn btn-outline-light" onclick="newGame()">
+          Novi Pokémon
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="scoreboard" class="scoreboard-overlay d-none">
+    <div class="scoreboard-card fade-in">
+        <h3>Scoreboard</h3>
+        <ul id="scores"></ul>
+        <button class="btn btn-outline-light mt-3" onclick="newGame()">
+            Nova igra
+        </button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
